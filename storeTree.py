@@ -1,9 +1,8 @@
 #使用pickle模块存储决策树
 import pickle
 def storeTree(inputTree,filename):
-    fw = open(filename,'w')
-    pickle.dump(inputTree,fw)
-    fw.close()
+    with open(filename,'w') as fw:
+        pickle.dump(inputTree,fw)
 
 def grabTree(filename):
     fr = open(filename)
